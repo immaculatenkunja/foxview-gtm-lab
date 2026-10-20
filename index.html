@@ -30,11 +30,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p id="message"></p>
 
   <script>
-    document.getElementById("register-button")
-      .addEventListener("click", function () {
-        document.getElementById("message").textContent =
-          "Thank you! Your test interaction was successful.";
+  document.getElementById("register-button")
+    .addEventListener("click", function() {
+      document.getElementById("message").textContent =
+        "Thank you! Your test interaction was successful.";
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "registration_success"
       });
-  </script>
+    });
+</script>
 </body>
 </html>
